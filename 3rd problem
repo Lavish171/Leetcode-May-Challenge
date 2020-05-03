@@ -1,0 +1,27 @@
+https://leetcode.com/explore/featured/card/may-leetcoding-challenge/534/week-1-may-1st-may-7th/3318/
+Solution:- class Solution {
+    public boolean canConstruct(String note, String magazine) {
+    if(note.equals("")) return true;
+    else if(magazine.equals("")) return false;
+    int notelen=note.length();
+    int maglen=magazine.length();
+
+     Map<Character,Integer> map=new HashMap<>();
+    for(int i=0;i<maglen;i++)
+    {
+        char c=magazine.charAt(i);
+        map.put(c,map.getOrDefault(c,0)+1);
+    }
+        for(int i=0;i<notelen;i++)
+        {
+            char c=note.charAt(i);
+            if(map.containsKey(c)  && map.get(c)>0)
+            {
+             map.put(c,map.get(c)-1); 
+            }
+            else return false;
+        }
+        return true;
+        
+    }
+}
