@@ -1,0 +1,19 @@
+https://leetcode.com/explore/featured/card/may-leetcoding-challenge/534/week-1-may-1st-may-7th/3319/
+1st solution
+class Solution {
+    public int findComplement(int num) {
+     char arr[]= Integer.toBinaryString(num).toCharArray();
+     for(int i=0;i<arr.length;i++)
+     {
+         if(arr[i]=='0') arr[i]='1';
+         else arr[i]='0';
+     }
+        String ans=new String(arr);
+        int decimal=Integer.parseInt(ans,2);
+        return decimal;
+    }
+}
+
+2nd solution
+same thinking ,but another solution can be with the hashamap
+
